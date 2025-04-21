@@ -1,2 +1,88 @@
-test
-ha7.ggm.kr
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection 연습</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>로그인</h1>
+        <form id="loginForm">
+            <label for="username">사용자 이름</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">로그인</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const resultDiv = document.getElementById('result');
+            const query = `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`;
+
+            if (username === "admin" && password === "password123") {
+                resultDiv.innerHTML = `<p>로그인 성공!</p><p>실제 SQL 쿼리: ${query}</p>`;
+            } else if (username === "admin" && password === "' OR '1'='1") {
+                resultDiv.innerHTML = `<p>로그인 성공!</p><p>SQL Injection 공격 성공! (쿼리: ${query})</p>`;
+            } else {
+                resultDiv.innerHTML = `<p>잘못된 사용자 이름 또는 비밀번호.</p><p>실제 쿼리: ${query}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
