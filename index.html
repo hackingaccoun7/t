@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HA7 | Developer Portfolio</title>
+  <title>HA7 | Developer Profile</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
@@ -34,13 +34,17 @@
       background: var(--bg-color);
       color: var(--text-color);
       margin: 0;
-      padding: 2rem 1rem;
+      padding: 0;
       min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       transition: background-color 0.3s, color 0.3s;
+      position: relative;
     }
 
     .toggle-btn {
-      position: fixed;
+      position: absolute;
       top: 1rem;
       right: 1rem;
       padding: 0.5rem 1rem;
@@ -59,106 +63,121 @@
       background-color: var(--button-hover);
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .profile-card, .projects {
+    .profile-card {
       background: var(--card-bg);
-      padding: 2.5rem 2rem;
+      padding: 3rem 2rem;
       border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+      max-width: 480px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
       border: 1px solid var(--border-color);
       transition: background-color 0.3s, border-color 0.3s;
     }
 
-    .profile-card {
-      text-align: center;
-    }
-
     .profile-card img {
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid var(--accent-color);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
 
-    h1 {
-      font-size: 2rem;
-      margin-top: 1rem;
-    }
-
-    .profile-info {
-      margin-top: 1rem;
-      color: var(--subtext-color);
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    .projects h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+    .profile-card h1 {
+      margin: 1.2rem 0 0.4rem;
+      font-size: 2.2rem;
+      font-weight: 700;
       color: var(--text-color);
     }
 
-    .project-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+    .profile-card p {
+      color: var(--subtext-color);
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
+      line-height: 1.6;
     }
 
-    .project-item {
-      background: var(--bg-color);
-      padding: 1rem;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-    }
-
-    .project-item a {
-      font-weight: 600;
-      color: var(--button-bg);
+    .profile-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.4rem;
       text-decoration: none;
+      color: white;
+      background-color: var(--button-bg);
+      padding: 0.65rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background-color 0.3s, transform 0.2s;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
     }
 
-    .project-item a:hover {
-      text-decoration: underline;
+    .profile-card a:hover {
+      background-color: var(--button-hover);
+      transform: translateY(-2px);
     }
 
+    .profile-card a i {
+      font-size: 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background-color: var(--button-bg);
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .social-links a:hover {
+      background-color: var(--button-hover);
+      transform: translateY(-2px);
+    }
+
+    .social-links i {
+      font-size: 1rem;
+    }
   </style>
 </head>
 <body>
   <button class="toggle-btn" onclick="toggleDarkMode()">🌙 / ☀️ 모드</button>
 
-  <div class="container">
-    <div class="profile-card">
-      <img src="1.jpg" alt="프로필 사진" />
-      <h1>HA7</h1>
-      <div class="profile-info">
-        💻 C 언어와 파이썬을 사용하는 개발자예요<br/>
-        🛠️ Visual Studio Code를 주로 사용하고 있어요<br/>
-        ✨ 깔끔한 로직과 효율적인 코드에 관심이 많아요<br/>
-        🌱 계속해서 배우고 성장하며 발전하는 개발자가 되고 싶어요
-      </div>
-    </div>
+  <div class="profile-card">
+    <img src="1.jpg" alt="프로필 사진" />
+    <h1>HA7</h1>
+    <p>
+      📌 개발자<br/>
+      💻 C 언어와 파이썬을 사용하는 개발자예요<br/>
+      🛠️ Visual Studio Code를 주로 사용하고 있어요<br/>
+      🌱 깔끔한 로직과 효율적인 코드에 관심이 많고, 계속해서 배우고 성장하고 있어요<br/>
+      🚀 앞으로도 새로운 기술을 익히며 발전하는 개발자가 되고 싶어요
+    </p>
 
-    <div class="projects">
-      <h2>🧩 프로젝트</h2>
-      <div class="project-list">
-        <div class="project-item">
-          <strong>🗂️ 포트폴리오 웹사이트</strong><br/>
-          <a href="#" target="_blank">테스터</a>
-        </div>
-        <div class="project-item">
-          <strong>📊 데이터 분석 자동화</strong><br/>
-          <a href="#" target="_blank">ㅁㅁ</a>
-        </div>
-      </div>
+    <div class="social-links">
+      <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+      <a href="https://x.com/" target="_blank"><i class="fab fa-x-twitter"></i> X</a>
+      <a href="https://threads.net/" target="_blank"><i class="fas fa-thread"></i> Threads</a>
+      <a href="https://twitch.tv/" target="_blank"><i class="fab fa-twitch"></i> Twitch</a>
+      <a href="mailto:your@email.com"><i class="fas fa-envelope"></i> Email</a>
+      <a href="https://wa.me/yourwhatsapplink" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://your-website.com" target="_blank"><i class="fas fa-globe"></i> Website</a>
+      <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
     </div>
   </div>
 
