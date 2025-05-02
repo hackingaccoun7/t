@@ -27,11 +27,12 @@
     }
 
     .intro-section {
+      display: flex;
       background-image: url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Garen_0.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      padding: 50px;
+      height: 400px;
       color: white;
       position: relative;
     }
@@ -49,20 +50,42 @@
     .intro-content {
       position: relative;
       z-index: 1;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .intro-left {
+      width: 50%;
+    }
+
+    .intro-left h2 {
+      font-size: 28px;
+      color: #ff4646;
+      margin-bottom: 15px;
+    }
+
+    .intro-left p {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .intro-right {
+      width: 50%;
+    }
+
+    .intro-right img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
     }
 
     .container {
       max-width: 1000px;
       margin: 40px auto;
       padding: 20px;
-    }
-
-    .champion-image {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
-      margin: 0 auto 20px;
-      display: block;
     }
 
     .section-title {
@@ -96,16 +119,14 @@
   <section class="intro-section">
     <div class="intro-overlay"></div>
     <div class="intro-content">
-      <h2>소개</h2>
-      <p>
-        가렌은 불굴의 선봉대를 이끄는 고결하고 자긍심 강한 전사입니다. 선봉대 내에서 인망이 두터울 뿐 아니라 심지어 적에게도 존경을 받지만, 그가 대대로 데마시아와 데마시아의 이상을 수호하는 임무를 맡은 크라운가드 가문의 자손이기 때문만은 아닙니다. 가렌은 마법 저항력을 갖춘 방어구와 거대한 대검으로 무장하고, 언제라도 마법사에 맞서 정당한 검으로 진정한 칼바람을 일으킬 준비가 되어 있습니다.
-      </p>
+      <div class="intro-left">
+        <h2>소개</h2>
+        <p>
+          가렌은 불굴의 선봉대를 이끄는 고결하고 자긍심 강한 전사입니다. 선봉대 내에서 인망이 두터울 뿐 아니라 심지어 적에게도 존경을 받지만, 그가 대대로 데마시아와 데마시아의 이상을 수호하는 임무를 맡은 크라운가드 가문의 자손이기 때문만은 아닙니다. 가렌은 마법 저항력을 갖춘 방어구와 거대한 대검으로 무장하고, 언제라도 마법사에 맞서 정당한 검으로 진정한 칼바람을 일으킬 준비가 되어 있습니다.
+        </p>
+      </div>
     </div>
   </section>
-
-  <div class="container">
-    <img src="사진.jpg" alt="가렌 이미지" class="champion-image">
-  </div>
 
   <div class="container">
     <h2 class="section-title">스킬</h2>
