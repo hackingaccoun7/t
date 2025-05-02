@@ -109,6 +109,30 @@
       font-size: 14px;
       color: #888;
     }
+
+    /* 스킬 섹션 */
+    .skill-section {
+      display: flex;
+      margin-top: 20px;
+    }
+
+    .skill-left {
+      width: 60%;
+    }
+
+    .skill-right {
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 동영상 컨테이너 */
+    video {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
@@ -130,13 +154,24 @@
 
   <div class="container">
     <h2 class="section-title">스킬</h2>
-    <ul>
-      <li><strong>인내심</strong> (기본 지속 효과): 가렌이 잠시 적의 기본 공격 및 스킬 공격에 맞지 않으면 1초마다 총 체력의 일정 비율씩 회복됩니다.</li>
-      <li><strong>결정타</strong> (Q): 가렌의 이동 속도가 큰 폭으로 증가하고 현재 걸려 있는 모든 둔화 효과가 제거됩니다. 가렌의 다음 공격은 적의 급소를 가격하여 추가 피해를 입히고 침묵시킵니다.</li>
-      <li><strong>용기</strong> (W): 준비중</li>
-      <li><strong>심판</strong> (E): 준비중</li>
-      <li><strong>데마시아의 정의</strong> (R): 준비중</li>
-    </ul>
+
+    <div class="skill-section">
+      <div class="skill-left">
+        <ul>
+          <li><strong><a href="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0086/ability_0086_P1.mp4" onclick="showVideo('https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0086/ability_0086_P1.mp4')">인내심</a></strong> (기본 지속 효과): 가렌이 잠시 적의 기본 공격 및 스킬 공격에 맞지 않으면 1초마다 총 체력의 일정 비율씩 회복됩니다.</li>
+          <li><strong><a href="#">결정타</a></strong> (Q): 가렌의 이동 속도가 큰 폭으로 증가하고 현재 걸려 있는 모든 둔화 효과가 제거됩니다. 가렌의 다음 공격은 적의 급소를 가격하여 추가 피해를 입히고 침묵시킵니다.</li>
+          <li><strong>용기</strong> (W): 준비중</li>
+          <li><strong>심판</strong> (E): 준비중</li>
+          <li><strong>데마시아의 정의</strong> (R): 준비중</li>
+        </ul>
+      </div>
+      <div class="skill-right">
+        <video id="skill-video" controls loop>
+          <source id="video-source" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
   </div>
 
   <div class="container">
@@ -158,5 +193,15 @@
   <footer>
     © 2025 7ha7. 모든 권리 보유.
   </footer>
+
+  <script>
+    function showVideo(videoUrl) {
+      var video = document.getElementById("skill-video");
+      var videoSource = document.getElementById("video-source");
+      videoSource.src = videoUrl;
+      video.load(); 
+      video.play(); 
+    }
+  </script>
 </body>
 </html>
