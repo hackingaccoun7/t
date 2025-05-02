@@ -16,6 +16,9 @@
             background-color: #121212;
             color: white;
             line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         header {
@@ -27,7 +30,8 @@
         }
 
         header .logo img {
-            width: 150px;
+            width: 50px;
+            height: 50px;
         }
 
         nav ul {
@@ -57,6 +61,8 @@
             background-color: #0f0f0f;
             padding: 80px 20px;
             text-align: center;
+            flex-grow: 1;
+            position: relative;
         }
 
         .main h1 {
@@ -65,37 +71,17 @@
             margin-bottom: 10px;
         }
 
-        .main p {
-            font-size: 18px;
-            color: #bbb;
+        .main .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
         }
 
-        .about {
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .about h1 {
-            font-size: 36px;
-            color: #ff4646;
-            margin-bottom: 20px;
-        }
-
-        .about p {
-            font-size: 18px;
-            color: #bbb;
-            margin-bottom: 20px;
-        }
-
-        .about ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .about ul li {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #bbb;
+        .main .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
         }
 
         footer {
@@ -103,13 +89,20 @@
             text-align: center;
             padding: 20px;
             font-size: 14px;
+            margin-top: auto;
+        }
+
+        footer .footer-logo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 8px;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/League_of_Legends_logo_2019.svg" alt="리그 오브 레전드">
+            <img src="https://cdn1.dotesports.com/wp-content/uploads/2022/06/10121115/League-of-Legends-Logo.jpg" alt="리그 오브 레전드">
         </div>
         <nav>
             <ul>
@@ -124,23 +117,18 @@
     <section class="main">
         <div class="main-text">
             <h1>리그 오브 레전드</h1>
-            <p>전 세계에서 가장 인기 있는 MOBA 게임, 리그 오브 레전드에서 새로운 챔피언과 전략을 경험하세요!</p>
+        </div>
+
+        <div class="image-container">
+            <img src="/photo/1.jpg" alt="게임 이미지">
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 리그 오브 레전드. 모든 권리 보유.</p>
+        <div class="footer-logo">
+            <img src="https://cdn1.dotesports.com/wp-content/uploads/2022/06/10121115/League-of-Legends-Logo.jpg" alt="리그 오브 레전드 아이콘">
+        </div>
+        <p>© 2025 7ha7. 모든 권리 보유.</p>
     </footer>
-
-    <section class="about">
-        <h1>리그 오브 레전드란?</h1>
-        <p>리그 오브 레전드는 전 세계적으로 가장 인기 있는 MOBA(멀티플레이어 온라인 배틀 아레나) 게임입니다. 5명씩 팀을 이루어 상대 팀의 넥서스를 파괴하는 것을 목표로 하며, 각 플레이어는 "챔피언"이라고 불리는 고유한 캐릭터를 선택하여 전투에 참여합니다.</p>
-        <h2>게임의 주요 특징</h2>
-        <ul>
-            <li>전략적인 팀워크: 팀원과의 협력이 중요하며, 전략적 사고가 요구됩니다.</li>
-            <li>다양한 챔피언: 각기 다른 능력과 역할을 가진 160명 이상의 챔피언을 선택할 수 있습니다.</li>
-            <li>빠른 게임 진행: 짧고 집중적인 게임 진행으로 빠른 플레이가 가능합니다.</li>
-        </ul>
-    </section>
 </body>
 </html>
