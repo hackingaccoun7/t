@@ -12,29 +12,12 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      background-image: url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Garen_0.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      position: relative;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
-      z-index: 0;
     }
 
     header {
       background-color: rgba(28, 28, 28, 0.8);
       padding: 20px;
       text-align: center;
-      z-index: 1;
-      position: relative;
     }
 
     header h1 {
@@ -43,12 +26,35 @@
       color: #ff4646;
     }
 
+    .intro-section {
+      background-image: url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Garen_0.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding: 50px;
+      color: white;
+      position: relative;
+    }
+
+    .intro-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .intro-content {
+      position: relative;
+      z-index: 1;
+    }
+
     .container {
       max-width: 1000px;
       margin: 40px auto;
       padding: 20px;
-      z-index: 1;
-      position: relative;
     }
 
     .champion-image {
@@ -59,9 +65,10 @@
       display: block;
     }
 
-    h2 {
+    .section-title {
       color: #ff4646;
       margin-top: 40px;
+      font-size: 24px;
     }
 
     ul {
@@ -78,27 +85,30 @@
       padding: 20px;
       font-size: 14px;
       color: #888;
-      z-index: 1;
-      position: relative;
     }
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
-
   <header>
     <h1>가렌 - 데마시아의 힘</h1>
   </header>
 
+  <section class="intro-section">
+    <div class="intro-overlay"></div>
+    <div class="intro-content">
+      <h2>소개</h2>
+      <p>
+        가렌은 불굴의 선봉대를 이끄는 고결하고 자긍심 강한 전사입니다. 선봉대 내에서 인망이 두터울 뿐 아니라 심지어 적에게도 존경을 받지만, 그가 대대로 데마시아와 데마시아의 이상을 수호하는 임무를 맡은 크라운가드 가문의 자손이기 때문만은 아닙니다. 가렌은 마법 저항력을 갖춘 방어구와 거대한 대검으로 무장하고, 언제라도 마법사에 맞서 정당한 검으로 진정한 칼바람을 일으킬 준비가 되어 있습니다.
+      </p>
+    </div>
+  </section>
+
   <div class="container">
     <img src="사진.jpg" alt="가렌 이미지" class="champion-image">
+  </div>
 
-    <h2>소개</h2>
-    <p>
-      가렌은 불굴의 선봉대를 이끄는 고결하고 자긍심 강한 전사입니다. 선봉대 내에서 인망이 두터울 뿐 아니라 심지어 적에게도 존경을 받지만, 그가 대대로 데마시아와 데마시아의 이상을 수호하는 임무를 맡은 크라운가드 가문의 자손이기 때문만은 아닙니다. 가렌은 마법 저항력을 갖춘 방어구와 거대한 대검으로 무장하고, 언제라도 마법사에 맞서 정당한 검으로 진정한 칼바람을 일으킬 준비가 되어 있습니다.
-    </p>
-
-    <h2>스킬</h2>
+  <div class="container">
+    <h2 class="section-title">스킬</h2>
     <ul>
       <li><strong>인내심</strong> (기본 지속 효과): 가렌이 잠시 적의 기본 공격 및 스킬 공격에 맞지 않으면 1초마다 총 체력의 일정 비율씩 회복됩니다.</li>
       <li><strong>결정타</strong> (Q): 가렌의 이동 속도가 큰 폭으로 증가하고 현재 걸려 있는 모든 둔화 효과가 제거됩니다. 가렌의 다음 공격은 적의 급소를 가격하여 추가 피해를 입히고 침묵시킵니다.</li>
@@ -106,8 +116,10 @@
       <li><strong>심판</strong> (E): 준비중</li>
       <li><strong>데마시아의 정의</strong> (R): 준비중</li>
     </ul>
+  </div>
 
-    <h2>이용 가능 스킨</h2>
+  <div class="container">
+    <h2 class="section-title">이용 가능 스킨</h2>
     <ul>
       <li>사막 특전사 가렌</li>
       <li>특공대 가렌</li>
