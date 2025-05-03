@@ -1,92 +1,145 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹페이지 제목</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HA7</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            background: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
 
-        header h1 {
-            margin: 0;
-        }
+    header {
+      background-color: #111827;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+    }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 30px;
+      margin-top: 10px;
+    }
 
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
+    nav ul li a {
+      color: #d1d5db;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    nav ul li a:hover {
+      color: #ffffff;
+    }
 
-        section {
-            padding: 20px;
-            margin: 20px;
-            background-color: white;
-            border-radius: 8px;
-        }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
 
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+    section {
+      margin-bottom: 60px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #111827;
+      border-left: 4px solid #3b82f6;
+      padding-left: 12px;
+    }
+
+    p, li {
+      font-size: 1rem;
+      color: #374151;
+    }
+
+    ul.tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    ul.tech-list li {
+      background-color: #e5e7eb;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f3f4f6;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>웹페이지 헤더</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">홈</a></li>
-                <li><a href="#about">소개</a></li>
-                <li><a href="#contact">연락처</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>HA7의 포트폴리오</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">소개</a></li>
+        <li><a href="#skills">기술 스택</a></li>
+        <li><a href="#projects">프로젝트</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="home">
-        <h2>홈 섹션</h2>
-        <p>여기에 홈페이지에 대한 설명을 적을 수 있습니다.</p>
+  <div class="container">
+    <section id="about">
+      <h2>👋 자기소개</h2>
+      <p>안녕하세요. 사용자 경험과 성능을 중요하게 생각하는 웹 프론트엔드 개발자입니다. 새로운 기술을 배우고 적용하는 것을 즐기며, 효율적인 코드 작성을 추구합니다.</p>
     </section>
 
-    <section id="about">
-        <h2>소개 섹션</h2>
-        <p>여기는 소개 내용을 적는 공간입니다.</p>
+    <section id="skills">
+      <h2>🛠️ 기술 스택</h2>
+      <ul class="tech-list">
+        <li>HTML5</li>
+        <li>CSS3 / Tailwind</li>
+        <li>JavaScript (ES6+)</li>
+        <li>React</li>
+        <li>Vue</li>
+        <li>Git & GitHub</li>
+        <li>Figma</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>💼 프로젝트</h2>
+      <p>아래는 제가 직접 참여하거나 리드한 주요 프로젝트들입니다.</p>
+      <ul>
+        <li><strong>포트폴리오 웹사이트:</strong> 이 페이지 포함, 개인 작업물 정리</li>
+        <li><strong>To-do App (React):</strong> 사용자 중심 인터랙션을 구현한 할 일 목록 앱</li>
+        <li><strong>팀 블로그 플랫폼:</strong> Vue 기반 콘텐츠 공유 플랫폼 구축</li>
+      </ul>
     </section>
 
     <section id="contact">
-        <h2>연락처 섹션</h2>
-        <p>이곳에 연락처 정보를 기입할 수 있습니다.</p>
+      <h2>📬 연락처</h2>
+      <p>Email: dev@example.com</p>
+      <p>GitHub: <a href="https://github.com/yourgithub" target="_blank">github.com/yourgithub</a></p>
     </section>
+  </div>
 
-    <footer>
-        <p>&copy; 2025 웹페이지 이름</p>
-    </footer>
+  <footer>
+    &copy; 2025 김개발. 모든 권리 보유.
+  </footer>
 </body>
 </html>
